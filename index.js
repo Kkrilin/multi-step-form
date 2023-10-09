@@ -262,5 +262,3 @@ aAddOnsForm.addEventListener("click", (e) => {
     createSelectedAddon(e.target);
   }
 });
-
-/////////  finish form  /////////
