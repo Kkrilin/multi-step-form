@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="sidebar-container">
+          <div class="steps-container">
+            <div class="step">
+              <h1 class="circle circle_background" id="c1">1</h1>
+              <div class="step-info">
+                <h2 class="uppercase">step 1</h2>
+                <h3 class="uppercase">your info</h3>
+              </div>
+            </div>
+            <div class="step">
+              <h1 class="circle" id="c2">2</h1>
+              <div class="step-info">
+                <h2 class="uppercase">step 2</h2>
+                <h3 class="uppercase">select plan</h3>
+              </div>
+            </div>
+            <div class="step">
+              <h1 class="circle" id="c3">3</h1>
+              <div class="step-info">
+                <h2 class="uppercase">step 3</h2>
+                <h3 class="uppercase">add-ons</h3>
+              </div>
+            </div>
+            <div class="step">
+              <h1 class="circle" id="c4">4</h1>
+              <div class="step-info">
+                <h2 class="uppercase">step 4</h2>
+                <h3 class="uppercase">summary</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="form-container">
+            <div class="personal_info" id="p1">
+              <div class="info_form_container">
+                <div class="info_heading">
+                  <h1>Personal info</h1>
+                  <p>
+                    Please provide your name, email adress, and phone number
+                  </p>
+                </div>
+                <div class="info_form">
+                  <form id="a_info_form">
+                    <div class="labels">
+                      <label for="name">Name</label>
+                      <label class="error" for="name">
+                        This field is required</label
+                      >
+                    </div>
+                    <input
+                      class="inputfield"
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="e.g. Stephen King"
+                    />
+                    <div class="labels">
+                      <label for="email">Email Address</label>
+                      <label class="error" for="email">
+                        This field is required</label
+                      >
+                    </div>
+                    <input
+                      class="inputfield"
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="e.g. stephenking@lorem.com"
+                    />
+                    <div class="labels">
+                      <label for="number">Phone Number</label>
+                      <label class="error" for="number">
+                        This field is required</label
+                      >
+                    </div>
+                    <input
+                      class="inputfield"
+                      type="number"
+                      name="number"
+                      id="number"
+                      placeholder="e.g. +1 234 567 890"
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="back" type="button"></button>
+                <button type="sumbit" form="a_info_form">Next Step</button>
+              </div>
+            </div>
+            <div class="personal_info plan display_form" id="p2">
+              <div class="info_form_container">
+                <div class="info_heading">
+                  <h1>Select your plan</h1>
+                  <p>You have the option of monthly or yearly billing</p>
+                </div>
+                <div class="info_form plan_form">
+                  <form id="a_plan_form">
+                    <div class="plans">
+                      <label for="arcade">
+                        <div class="arcadeCard">
+                          <div class="img">
+                            <img src="./assets/images/icon-arcade.svg" alt="" />
+                          </div>
+                          <h1>Arcade</h1>
+                          <h3 class="price" data-price="9">$9/mo</h3>
+                          <p class="free">2 months free</p>
+                          <input
+                            class="radiofield"
+                            type="radio"
+                            name="plan"
+                            id="arcade"
+                            data-duration="monthly"
+                            data-price="9"
+                          />
+                        </div>
+                      </label>
+                      <label for="advanced">
+                        <div class="advancedCard">
+                          <div class="img">
+                            <img
+                              src="./assets/images/icon-advanced.svg"
+                              alt=""
+                            />
+                          </div>
+                          <h1>Advanced</h1>
+                          <h3 class="price" data-price="12">$12/mo</h3>
+                          <p class="free">2 months free</p>
+                          <input
+                            class="radiofield"
+                            type="radio"
+                            name="plan"
+                            id="advanced"
+                            data-duration="monthly"
+                            data-price="12"
+                          />
+                        </div>
+                      </label>
+                      <label for="pro">
+                        <div class="proCard">
+                          <div class="img">
+                            <img src="./assets/images/icon-pro.svg" alt="" />
+                          </div>
+                          <h1>pro</h1>
+                          <h3 class="price" data-price="15">$15/mo</h3>
+                          <p class="free">2 months free</p>
+                          <input
+                            class="radiofield"
+                            type="radio"
+                            name="plan"
+                            id="pro"
+                            data-duration="monthly"
+                            data-price="15"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                    <div class="duration_slider">
+                      <span class="month">Monthly</span>
+                      <label class="switch">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                      <span class="year">Yearly</span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="back back_plan" type="button">Go Back</button>
+                <button type="sumbit" form="a_plan_form">Next Step</button>
+              </div>
+            </div>
+            <div class="personal_info add_ons display_form" id="p3">
+              <div class="info_form_container">
+                <div class="info_heading">
+                  <h1>Pick add-ons</h1>
+                  <p>Add-ons help enhance your gaming experience</p>
+                </div>
+                <div class="add_on_form">
+                  <form id="a_add_ons_form">
+                    <label for="online">
+                      <div class="online" data-charge="1">
+                        <input
+                          class="add_ons_checkbox"
+                          type="checkbox"
+                          name="online"
+                          id="online"
+                        />
+                        <div>
+                          <h3>Online service</h3>
+                          <p>Access to multiplayer games</p>
+                        </div>
+                        <h4 class="charge">+$1/mo</h4>
+                      </div>
+                    </label>
+                    <label for="storage">
+                      <div class="storage" data-charge="2">
+                        <input
+                          class="add_ons_checkbox"
+                          type="checkbox"
+                          name="storage"
+                          id="storage"
+                        />
+                        <div>
+                          <h3>Larger storage</h3>
+                          <p>Extra 1TB of cloud save</p>
+                        </div>
+                        <h4 class="charge">+$2/mo</h4>
+                      </div>
+                    </label>
+                    <label for="profile">
+                      <div class="profile" data-charge="3">
+                        <input
+                          class="add_ons_checkbox"
+                          type="checkbox"
+                          name="profile"
+                          id="profile"
+                        />
+                        <div>
+                          <h3>Customizable Profile</h3>
+                          <p>Custom theme on your profile</p>
+                        </div>
+                        <h4 class="charge">+$3/mo</h4>
+                      </div>
+                    </label>
+                  </form>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="back back_add" type="button">Go back</button>
+                <button type="sumbit" form="a_add_ons_form">Next Step</button>
+              </div>
+            </div>
+            <div class="personal_info finish_up display_form" id="p4">
+              <div class="info_form_container">
+                <div class="info_heading">
+                  <h1>Finishing up</h1>
+                  <p>Double-check everything looks OK before confirming</p>
+                </div>
+                <div class="info_form finish_up">
+                  <div id="a_finish_up">
+                    <div class="plan_Addon">
+
+                      <div class="finish_plan">
+                        
+                      </div>
+                      <hr>
+                      <div class="finish_add_ons">
+                        
+                    </div>
+                  </div>
+                    <div class="total">
+                      <h2>Total <span id="service">(per month)</span></h2>
+                      <h1 class="total_price">$12/mo</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="back back_finish" type="button">Go Back</button>
+                <button type="button" id="a_finish">Confirm</button>
+              </div>
+            </div>
+            <div class="personal_info thank_you display_form" id="p5">
+              <div class="info_form_container">
+                <div class="info_heading thank_heading">
+                  <img src="./assets/images/icon-thank-you.svg" alt="" />
+                  <h1>Thank you !</h1>
+                  <p>
+                    Thanks for confirming your subscription! We hope you have
+                    fun using our platform. If you ever need support, please
+                    feel free to email us at support@loremgaming.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
