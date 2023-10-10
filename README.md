@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github link](https://github.com/Kkrilin/multi-step-form)
+- Live Site URL: [live url hosted on vercel](https://multi-step-form-one-beige.vercel.app/)
 
 ## My process
 
