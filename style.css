@@ -532,7 +532,9 @@ hr {
   border: 1px solid red;
   animation: errorBorder 0.5s forwards;
 }
-
+.summaryTitle{
+  text-transform: capitalize;
+}
 .error_text {
   display: block;
   animation: errorText 0.5s forwards;
