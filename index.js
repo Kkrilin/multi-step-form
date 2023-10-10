@@ -63,10 +63,9 @@ function planFinished(element) {
   div.append(h2);
   const h3 = document.createElement("h3");
   h3.setAttribute("class", "plan_price");
-  h3.innerText = `$${element.dataset.price}/${element.dataset.duration.slice(
-    0,
-    2
-  )}`;
+  h3.innerText = `$${element.dataset.price}/${
+    durationCheckbox.checked ? "yr" : "mo"
+  }`;
   selectedPlanContainer.append(div);
   selectedPlanContainer.append(h3);
 }
@@ -160,12 +159,12 @@ durationCheckbox.addEventListener("click", (e) => {
   yearlyPlan.classList.toggle("active_duration");
   pricesEl.forEach((el) => {
     if (durationCheckbox.checked) {
-      el.parentNode.lastElementChild.dataset.duration = "yearly";
+      el.parentNode.lastElementChild.dataset.duration = "Yearly";
       el.parentNode.lastElementChild.dataset.price = `${el.dataset.price * 10}`;
       el.innerText = `$${el.dataset.price * 10}/yr`;
       el.nextElementSibling.classList.remove("free");
     } else {
-      el.parentNode.lastElementChild.dataset.duration = "monthly";
+      el.parentNode.lastElementChild.dataset.duration = "Monthly";
 
       el.parentNode.lastElementChild.dataset.price = `${el.dataset.price}`;
       el.innerText = `$${el.dataset.price}/mo`;
