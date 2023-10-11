@@ -519,10 +519,16 @@ hr {
 /* end of finish up page */
 
 /* start of thnakyou page */
-.thank_you {
+/* .thank_you {
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+.thank_heading {
+  padding-top: 5rem;
+  /* height: 50vh; */
+  text-align: center;
 }
 
 /* end of thabkyou page */
@@ -532,7 +538,7 @@ hr {
   border: 1px solid red;
   animation: errorBorder 0.5s forwards;
 }
-.summaryTitle{
+.summaryTitle {
   text-transform: capitalize;
 }
 .error_text {
@@ -681,6 +687,7 @@ hr {
   }
 
   .thank_heading {
+    padding: unset;
     height: 50vh;
     text-align: center;
   }

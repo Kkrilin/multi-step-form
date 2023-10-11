@@ -38,8 +38,43 @@ change = document.querySelector(".change");
 function formValidation(element) {
   if (element.value === "") {
     element.classList.add("error_border");
+    element.previousElementSibling.lastElementChild.innerHTML =
+      "This field is required";
     element.previousElementSibling.lastElementChild.classList.add("error_text");
     return false;
+  } else if (element.type === "number") {
+    if (element.value.length > 9) {
+      element.classList.remove("error_border");
+      element.previousElementSibling.lastElementChild.classList.remove(
+        "error_text"
+      );
+      return true;
+    } else {
+      element.classList.add("error_border");
+      element.previousElementSibling.lastElementChild.classList.add(
+        "error_text"
+      );
+      element.previousElementSibling.lastElementChild.innerHTML =
+        "please enter 10 digit";
+      return false;
+    }
+  } else if (element.type === "email") {
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (regex.test(element.value)) {
+      element.classList.remove("error_border");
+      element.previousElementSibling.lastElementChild.classList.remove(
+        "error_text"
+      );
+      return true;
+    } else {
+      element.classList.add("error_border");
+      element.previousElementSibling.lastElementChild.classList.add(
+        "error_text"
+      );
+      element.previousElementSibling.lastElementChild.innerHTML =
+        "please enter a valid email";
+      return false;
+    }
   } else {
     element.classList.remove("error_border");
     element.previousElementSibling.lastElementChild.classList.remove(
@@ -55,7 +90,7 @@ function planFinished(element) {
   selectedPlanContainer.innerHTML = "";
   const div = document.createElement("div");
   const h1 = document.createElement("h1");
-  h1.classList.add('summaryTitle')
+  h1.classList.add("summaryTitle");
   h1.innerText = `${element.id} (${element.dataset.duration})`;
   const h2 = document.createElement("h2");
   h2.setAttribute("class", "change");
@@ -64,7 +99,9 @@ function planFinished(element) {
   div.append(h2);
   const h3 = document.createElement("h3");
   h3.setAttribute("class", "plan_price");
-  h3.innerText = `$${element.dataset.price}/${durationCheckbox.checked ? 'yr':'mo'}`;
+  h3.innerText = `$${element.dataset.price}/${
+    durationCheckbox.checked ? "yr" : "mo"
+  }`;
   selectedPlanContainer.append(div);
   selectedPlanContainer.append(h3);
 }
@@ -209,6 +246,8 @@ planForm.addEventListener("submit", (event) => {
     stepChanger(2, 3);
   }
 });
+
+////////submit add-on form ////
 
 addOnForm.addEventListener("submit", (event) => {
   totalPrice.innerText = "";
